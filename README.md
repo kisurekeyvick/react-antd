@@ -20,7 +20,7 @@ antd按需加载样式，就需要使用babel-import-plugin，在使用这个插
 node_modules/react-scripts/config/webpack.config.dev.js
 具体的配置跟源码一起放在github上：详见[附录：webpack的scss配置：](https://github.com/toly1994328/React_Test/tree/master/%E9%99%84%E5%BD%95%EF%BC%9Awebpack%E7%9A%84scss%E9%85%8D%E7%BD%AE)
 ```
-- webpack.config.dev.js
+- webpack.config.dev.js  
 ```js
 {
     // Exclude `js` files to keep "css" loader working as it injects
