@@ -4,16 +4,16 @@
 - 组件库：antd 
 
 ## 运行与配置
-- 使用yarn install将基本的配置加载下载
+- 使用yarn install将基本的配置加载下来
 ### react-app-rewired
-- react-app-rewired的版本为1.6.2，如果是哟1.6.2以上的版本，则会报错
+- react-app-rewired的版本为1.6.2，如果是高于1.6.2的版本，则会报错
 ```
-* antd按需加载样式，就需要使用babel-import-plugin，在使用这个插件的时候，还需要react-app-rewired
+antd按需加载样式，就需要使用babel-import-plugin，在使用这个插件的时候，还需要react-app-rewired
     在2.0版本一下的时候
 ```
 #### 解决方法
 - 降版本，在package.json包里面："react-app-rewired": "1.6.2",
-- [给你传送门](https://blog.csdn.net/weixin_39836173/article/details/86110011)
+- [你也可以在webpack.config.js中修改配置](https://blog.csdn.net/weixin_39836173/article/details/86110011)
 ### SaaS配置
 - [React搭建react环境及SCSS的配置](https://www.jianshu.com/p/9223b84a84ce)
 ```
