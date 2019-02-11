@@ -1,0 +1,70 @@
+.kisure-customer-list-budget-record {
+    background-color: #fff;
+    margin: 24px 32px;
+
+    .kisure-customer-list-budget-record-title {
+        & > p {
+            font-size: 16px;
+            color: #222222;
+            line-height: 28px;
+            padding: 16px 24px;
+            border-bottom: 1px solid #E8E8E8;
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+    
+    .kisure-customer-list-budget-record-content {
+        padding: 24px;
+
+        .kisure-customer-list-budget-record-button {
+            text-align: left;
+    
+            button {
+                margin-bottom: 24px;
+            }
+
+            button:not(:last-child) {
+                margin-right: 8px;
+            }
+        }
+
+        .kisure-customer-list-budget-record-list {
+            text-align: left;
+
+            .kisure-customer-list-budget-record-timeline {
+                padding-left: 157px;
+
+                li.ant-timeline-item {
+                    position: relative;
+
+                    span.time {
+                        position: absolute;
+                        left: -175px;
+                        top: 0px;
+                    }
+                }
+            }
+
+            .kisure-customer-list-budget-record-warn {
+                text-align: left;
+            }
+
+            .timeline-item-title {
+                font-weight: 600;
+
+                & > a > i {
+                    margin: 0 3px 0 15px;
+                }
+            }
+        }
+    
+        .kisure-customer-list-budget-pageInfo {
+            margin: 24px 0;
+
+            .kisure-pagination-component {
+                text-align: left;
+            }
+        }
+    }
+}

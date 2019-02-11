@@ -1,0 +1,28 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-setting-account {
+    .kisure-saas-customer-setting-account-company {
+        margin-bottom: 24px;
+
+        .kisure-saas-customer-setting-account-company-list {
+            text-align: left;
+
+            .red {
+                color: $errorColor;
+                margin-left: 8px;
+            }
+        }
+
+        .kisure-saas-customer-setting-account-company-operation {
+            text-align: right;
+        }
+
+        button:not(:last-child) {
+            margin-right: 8px;       
+        }
+    }
+
+    .kisure-saas-customer-setting-account-discount-skeleton {
+        margin-bottom: 24px;
+    }
+}

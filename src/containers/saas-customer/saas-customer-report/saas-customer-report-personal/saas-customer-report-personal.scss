@@ -1,0 +1,101 @@
+@import '../../../../layouts//global.scss';
+
+@mixin title {
+    text-align: left;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+@mixin btnGroup {
+    float: right;
+}
+
+@mixin boxLayout {
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+@mixin boxHead {
+    border-bottom: 1px solid #ddd;
+    padding: 16px 24px;
+}
+
+.kisure-antd-report-personal-container {
+    .kisure-antd-report-personal-indicators {
+        margin-bottom: 24px;
+
+        .kisure-antd-report-personal-indicators-head {
+            padding: 0 24px;
+
+            p.kisure-antd-report-personal-indicators-head-title {
+                @include title;
+            }
+    
+            .kisure-antd-report-personal-head-radioGroup {
+                @include btnGroup;
+            }
+        }
+
+        .kisure-antd-report-personal-indicators-content {
+            background-color: #fff;
+            padding: 24px;
+            margin-top: 4px;
+
+            .kisure-antd-report-personal-indicators-warn {
+                text-align: left;
+            }
+        }
+    }
+
+    .kisure-antd-report-personal-charts {
+        @include boxLayout;
+
+        .kisure-antd-report-personal-charts-head {
+            @include boxHead;
+
+            .kisure-antd-report-personal-charts-head-title {
+                @include title;
+                margin-bottom: 0;
+            }
+    
+            .kisure-antd-report-personal-charts-head-radioGroup {
+                @include btnGroup;
+            }
+        }
+
+        .kisure-antd-report-personal-charts-btnGroup {
+            text-align: left;
+            padding: 24px;
+        }
+    }
+
+    .kisure-antd-report-personal-workDetails {
+        @include boxLayout;
+
+        .kisure-antd-report-personal-workDetails-head{
+            @include boxHead;
+
+            .kisure-antd-report-personal-workDetails-head-title {
+                @include title;
+                margin-bottom: 0;
+            }
+
+            .kisure-antd-report-personal-workDetails-head-operation {
+                text-align: right;
+
+                .kisure-antd-report-personal-workDetails-head-radioGroup {
+                    // @include btnGroup;
+                }
+    
+                .kisure-antd-report-personal-workDetails-head-RangePicker {
+                    float: right;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        .kisure-antd-report-personal-workDetails-table {
+            padding: 24px 24px 0;
+        }
+    }
+}

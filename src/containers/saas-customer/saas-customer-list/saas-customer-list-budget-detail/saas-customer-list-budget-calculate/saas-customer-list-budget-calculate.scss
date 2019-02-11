@@ -1,0 +1,105 @@
+@import '../../../../../layouts/global.scss';
+
+.kisure-customer-list-budget-calculate {
+    background-color: #fff;
+    margin: 24px 32px;
+
+    .kisure-customer-list-budget-calculate-title {
+        & > p {
+            font-size: 16px;
+            color: #222222;
+            line-height: 28px;
+            padding: 16px 24px;
+            border-bottom: 1px solid #E8E8E8;
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+
+    .kisure-customer-list-budget-calculate-content {
+        padding: 24px;
+
+        .kisure-customer-list-budget-calculate-alert {
+            p {
+                text-align: left;
+                margin-bottom: 0px;
+            }
+
+            margin-bottom: 24px;
+        }
+
+        .kisure-customer-list-budget-calculate-sectionInfo {
+            margin-bottom: 40px;
+
+            @include formLayout;
+
+            .ant-row.ant-form-item {
+                margin-bottom: 24px;
+            }
+
+            p.section-title {
+                margin-bottom: 16px;
+                height: 26px;
+                line-height: 26px;
+                font-size: 16px;
+                font-weight: 600;
+                text-align: left;
+            }
+
+            .section-show-box {
+                text-align: left;
+                
+                span.item-info {
+                    & + .item-info:before {
+                        content: "/";
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+                }
+
+                span.blue {
+                    color: $color;
+                }
+
+                span.red {
+                    color: $errorColor;
+                }
+
+                span.red, span.blue {
+                    margin: 0 5px;
+                }
+
+                .section-item-box {
+                    margin-right: 50px;
+                    display: inline-block;
+                    margin-bottom: 12px;
+                }
+
+                .section-operation-expand {
+                    display: inline-block;
+                }
+
+                .section-operation-saveorcancel {
+                    text-align: right;
+
+                    button {
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+            &.history {
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                
+                .calaulate-history-container,& .calculate-previous-container {
+                    padding: 0 24px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+}

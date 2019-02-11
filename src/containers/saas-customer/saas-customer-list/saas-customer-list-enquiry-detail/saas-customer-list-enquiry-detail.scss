@@ -1,0 +1,122 @@
+@import '../../../../layouts//global.scss';
+
+@mixin formLayout {
+    .ant-form-item-label {
+        float: left;
+    }
+
+    .ant-form-item-control {
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 12px;
+    }
+}
+
+.kisure-customer-list-detail {
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .kisure-customer-list-detail-customerInfo {
+        background-color: #fff;
+        padding: 10px 32px 16px;
+
+        @include formLayout;
+
+        .kisure-customer-list-detail-customerInfo-header {
+            text-align: left;
+            margin-bottom: 24px;
+
+            & > span.customer{
+                font-size: 20px;
+                font-weight: 600;
+
+                span {
+                    color: $color;
+                }
+            }
+
+            & > span:last-child {
+                float: right;
+
+                button:not(:last-child) {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    .kisure-customer-list-detail-content {
+        margin: 24px;
+
+        .title {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0px;
+            font-size: 20px;
+            padding: 16px 24px;
+            text-align: left;
+        }
+
+        & > div {
+            margin-bottom: 24px;
+            background-color: #fff;
+        }
+
+        .kisure-customer-list-detail-calculatePriceInfo,
+        .kisure-customer-list-detail-carInfo,
+        .kisure-customer-list-detail-personInfo {
+            @include formLayout;
+
+            .content {
+                padding: 24px;
+            }
+        }
+
+        .kisure-customer-list-detail-calculatePriceInfo {
+            p.subtitle {
+                text-align: left;
+                font-size: 16px;
+                color: #222222;
+                line-height: 28px;
+                padding: 16px 0px;
+                margin-bottom: 15px;
+                border-bottom: 1px dotted #E8E8E8;
+
+                & > label {
+                    float: right;
+                }
+            }
+
+            .kisure-customer-list-detail-baseInfo {
+                margin-bottom: 24px;
+    
+                & > p{
+                    text-align: left;
+                    
+                    & > span:last-child {
+                        float: right;
+                    }
+                }
+            }
+
+            .kisure-customer-list-detail-compulsory {
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .spanLabel:after,.Plabel:after {
+        content: ":";
+        margin: 0 8px 0 2px;
+        position: relative;
+        top: -0.5px;
+    }
+
+    span.red {
+        color: $errorColor;
+        font-size: 18px;
+        margin: 0 8px;
+    }
+}

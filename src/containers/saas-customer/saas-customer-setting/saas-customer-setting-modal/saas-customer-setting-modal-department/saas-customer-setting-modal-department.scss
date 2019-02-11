@@ -1,0 +1,9 @@
+@import '../../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-department-content {
+    margin-bottom: 24px;
+}
+
+.kisure-saas-customer-modal-department-button {
+    @include model-button;
+}

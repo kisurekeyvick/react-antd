@@ -1,0 +1,133 @@
+@import '../../layouts/global.scss';
+
+@mixin phone {
+    transform: rotate(224deg);
+    background-color: #ff4d4f;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+@mixin spanIcon {
+    cursor: pointer;
+    padding: 0px 5px;
+    height: 30px;
+    display: inline-block;
+
+    &:hover {
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+}
+
+.kisure-antd-advanced-phone{
+    display: inline-block;
+    border: 1px solid;
+    border: 1px solid #f2f2f2;
+    transition: .2s ease-in-out;
+    box-shadow: 0 2px 12px #e5e5e5;
+    padding: 14px 24px 24px;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 12px;
+    max-width: 300px;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .kisure-antd-advanced-phone-common {
+        p {
+            text-align: left;
+            line-height: 30px;
+
+            span {
+                float: right;
+                cursor: pointer;
+                margin-left: 10px;
+                padding: 0px 5px;
+
+                &:hover {
+                    background-color: #ddd;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        div.phone-action {
+            i.anticon.anticon-phone {
+                @include phone;
+                margin-right: 10px;
+            }
+
+            .phone-action-text {
+                color: $color;
+                line-height: 30px;
+                height: 30px;
+                display: inline-block;
+
+                .ant-spin.ant-spin-spinning {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .kisure-antd-advanced-phone-small {
+        p {
+            line-height: 30px;
+
+            .span-common {
+                @include spanIcon;
+            }
+        }
+
+        div.phone-action {
+            i.anticon.anticon-phone {
+                @include phone;
+            }
+        }
+    }
+
+    .kisure-antd-advanced-phone-connecting {
+        min-width: 250px;
+
+        p {
+            color: $color;
+            height: 30px;
+            line-height: 30px;
+
+            span.span-close.icon-box {
+                float: right;
+                @include spanIcon;
+                color: rgba(0, 0, 0, 0.65);
+            }
+        }
+    }
+
+    .kisure-antd-advanced-phone-fail {
+        text-align: left;
+
+        div.kisure-antd-advanced-phone-fail-cancel {
+            text-align: right;
+            margin-top: 12px;
+
+            button, button:hover {
+                color: #fff;
+                background-color: #ff4d4f;
+                border-color: #ff4d4f;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .ant-tooltip {
+        z-index: 9999;
+    }
+}

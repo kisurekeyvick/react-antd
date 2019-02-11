@@ -1,0 +1,58 @@
+@import '../../../../layouts//global.scss';
+
+@mixin title {
+    text-align: left;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+@mixin btnGroup {
+    float: right;
+}
+
+@mixin boxLayout {
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+@mixin boxHead {
+    border-bottom: 1px solid #ddd;
+    padding: 16px 24px;
+}
+
+.kisure-antd-report-car-container {
+    .kisure-antd-report-car-container-proportion {
+        margin-bottom: 24px;
+        @include boxLayout;
+
+        .kisure-antd-report-car-container-proportion-head {
+            @include boxHead;
+
+            .kisure-antd-report-car-container-proportion-head-title {
+                @include title;
+                margin-bottom: 0;
+            }
+
+            .kisure-antd-report-car-container-proportion-head-operation {
+                text-align: right;
+                
+                .kisure-antd-report-company-container-btnGroup-proportion {
+
+                }
+            }
+
+            .kisure-antd-report-company-proportion-head-RangePicker {
+                float: right;
+                margin-left: 8px;
+            }
+        }
+
+        .kisure-antd-report-car-container-proportion-content {
+            padding: 24px;
+
+            .kisure-antd-report-company-premiumType-warn {
+                text-align: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.kisure-pagination-component {
+    text-align: right;
+
+    span.kisure-pagination-pageInfo {
+        margin-right: 8px;
+    }
+
+    ul.ant-pagination {
+        display: inline;
+    }
+}
+
+@media (max-width: 835px) {
+    .kisure-pagination-component {
+        text-align: left;
+        
+        span.kisure-pagination-pageInfo {
+            display: block;
+            margin-bottom: 24px;
+        }
+    }
+}
+

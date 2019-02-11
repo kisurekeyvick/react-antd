@@ -1,0 +1,63 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  },
+  "rules": {
+    "jsx-no-lambda": false,
+    "max-classes-per-file":[true,100],
+    "member-access": false,
+    "member-ordering": false,
+    "forin":false,
+    "prefer-for-of": false,
+    // 允许ts书写静态属性
+    "newline-before-return": false,
+    "curly": false,
+    "variable-name": false,
+    "no-empty": false,
+    "no-empty-interface": true,
+    "no-shadowed-variable": [
+      true,
+      {
+        "class": true,
+        "enum": true,
+        "function": true,
+        "interface": false,
+        "namespace": true,
+        "typeAlias": false,
+        "typeParameter": false
+      }
+    ],
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-misused-new": true,
+    "no-non-null-assertion": false,
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": false,
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": false,
+    "no-unused-variable": false,
+    // "no-use-before-declare": true,
+    "no-var-keyword": true, 
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "only-arrow-functions": false,
+    "no-namespace": false,
+    "callable-types": false
+  }
+}

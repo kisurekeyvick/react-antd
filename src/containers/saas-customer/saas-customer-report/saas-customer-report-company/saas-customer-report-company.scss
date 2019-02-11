@@ -1,0 +1,67 @@
+@import '../../../../layouts//global.scss';
+
+@mixin title {
+    text-align: left;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+@mixin btnGroup {
+    float: right;
+}
+
+@mixin boxLayout {
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+@mixin boxHead {
+    border-bottom: 1px solid #ddd;
+    padding: 16px 24px;
+}
+
+.kisure-antd-report-company-container {
+    .kisure-antd-report-company-container-premium {
+        margin-bottom: 24px;
+        @include boxLayout;
+
+        .kisure-antd-report-company-container-premium-head {
+            @include boxHead;
+
+            .kisure-antd-report-company-container-premium-head-title {
+                @include title;
+                margin-bottom: 0;
+            }
+
+            .kisure-antd-report-personal-premium-head-operation {
+                text-align: right;
+
+                .kisure-antd-report-company-container-btnGroup-premiumTime {
+                   
+                }
+    
+                .kisure-antd-report-company-premiumTime-head-RangePicker {
+                    float: right;
+                    margin-left: 8px;
+                }
+            }
+        }
+
+        .kisure-antd-report-company-container-premium-content {
+            padding: 0 24px 24px;
+
+            .kisure-antd-report-company-container-premium-content-operation {
+                text-align: left;
+                padding: 24px 0px;
+
+                .kisure-antd-report-company-container-btnGroup-premiumType {
+
+                }
+            }
+
+            .kisure-antd-report-company-premiumType-warn {
+                text-align: left;
+            }
+        }
+    }
+}

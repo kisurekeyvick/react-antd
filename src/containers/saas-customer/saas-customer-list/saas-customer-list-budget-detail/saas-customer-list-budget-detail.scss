@@ -1,0 +1,88 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-customer-list-budget-detail {
+    .kisure-customer-list-budget-detail-baseInfo {
+        background-color: #fff;
+        padding: 10px 32px;
+
+        @include formLayout;
+
+        .baseInfo-box {
+            margin: 0 8px;
+
+            .baseInfo-carInfo {
+                text-align: left;
+                margin-bottom: 24px;
+    
+                .highlighted {
+                    font-size: 20px;
+                    color: #222222;
+                    line-height: 28px;
+                }
+    
+                span.highlighted, .carBrandType{
+                    margin-right: 20px;
+                }
+            }
+    
+            .baseInfo-button-group {
+                text-align: right;
+                margin-bottom: 12px;
+
+                button {
+                    margin-bottom: 12px;
+                }
+    
+                button:not(:last-child) {
+                    margin-right: 8px;
+                }
+
+                button.defeat {
+                    color: #fff;
+                    background-color: #ff4d4f;
+                    border-color: #ff4d4f;
+                }
+            }
+        }
+
+        .customer-phone {
+            span.phone-action {
+                color: $color;
+                margin-left: 8px;
+
+                i {
+                    font-size: 18px;
+                    transform: rotateY(180deg) translateY(1px);
+                    margin-left: 8px;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+
+    .kisure-customer-list-budget-detail-tabs {
+        .ant-tabs-nav-scroll {
+            text-align: left;
+            background-color: #fff;
+            padding: 0 40px;
+        }
+
+        margin: 0 0 0 -8px;
+        
+        :global {
+            // 1px 可以让选中效果显示完成
+            .ant-tabs-bar {
+            border-bottom: none;
+            margin-bottom: 1px;
+            }
+        }
+    }
+
+    .spanLabel:after,.Plabel:after {
+        content: ":";
+        margin: 0 8px 0 2px;
+        position: relative;
+        top: -0.5px;
+    }
+}

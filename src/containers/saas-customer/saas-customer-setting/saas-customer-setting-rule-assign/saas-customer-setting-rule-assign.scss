@@ -1,0 +1,31 @@
+.kisure-saas-customer-setting-ruleAssign {
+    .kisure-saas-customer-setting-bussinessRemind-form {
+        .ant-form-item-label, p.instructions {
+            line-height: 27px;
+        }
+        
+        .ant-form-item-control {
+            text-align: left;
+        }
+
+        .kisure-saas-customer-setting-bussinessRemind-table {
+
+        }
+
+        .kisure-saas-customer-setting-bussinessRemind-page {
+            margin-top: 19px;
+
+            .ant-pagination-options-size-changer.ant-select {
+                width: auto;
+            }
+        }
+    }
+
+    .kisure-saas-customer-setting-ruleAssign-button {
+        text-align: center;
+        
+        button:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}

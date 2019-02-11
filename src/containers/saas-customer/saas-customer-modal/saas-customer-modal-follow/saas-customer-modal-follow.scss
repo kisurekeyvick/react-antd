@@ -1,0 +1,29 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-follow-content {
+    @include formLayout;
+
+    i.remind-icon {
+        display: inline-block;
+        padding-top: 13px;
+        margin-left: 5px;
+    }
+
+    .button-group-formItem {
+        padding-right: 30px;
+    }
+
+    .ant-form-item.textarea-formItem {
+        .div.ant-form-item-label {
+            line-height: 15px;
+        }
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 24px;
+    }
+}
+
+.kisure-saas-customer-modal-follow-button {
+    @include model-button;
+}

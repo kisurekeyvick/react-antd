@@ -1,0 +1,16 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-new-customer-tabs {
+    .ant-form-item-label {
+        float: left;
+    }
+
+    // .ant-form-item {
+    //     margin-bottom: 24px;
+    //     width: 100%;
+    // }
+}
+
+.kisure-saas-customer-modal-new-customer-button {
+    @include model-button;
+}

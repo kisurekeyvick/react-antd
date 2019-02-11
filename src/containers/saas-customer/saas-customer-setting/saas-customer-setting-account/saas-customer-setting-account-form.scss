@@ -1,0 +1,79 @@
+.accountForm-item {
+    .accountForm-item-account {
+        background-color: #fff;
+        border: 1px solid #f2f2f2;
+        transition: .2s ease-in-out;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px #e5e5e5;
+        padding: 24px;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        cursor: pointer;
+
+        .accountForm-item-button-group {
+            button:not(:last-child) {
+                margin-right: 8px;
+            }
+
+            button {
+                font-size: 12px;
+            }
+
+            margin-top: 24px;
+        }
+
+        .ant-form-item-label {
+            float: left;
+        }
+
+        .ant-form-item {
+            margin-bottom: 0px;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    .accountForm-item-field-ext {
+        background-color: #fff;
+        border: 1px solid #f2f2f2;
+        transition: .2s ease-in-out;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px #e5e5e5;
+        padding: 24px;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        .company-account-title {
+            text-align: left;
+            
+            label {
+                border: 1px solid transparent;
+                white-space: nowrap;
+                padding: 0 15px;
+                font-size: 14px;
+                border-radius: 4px;
+                background-color: #fff;
+                border-color: #ddd;
+                height: 32px;
+                line-height: 32px;
+                display: inline-block;
+            }
+        }
+
+        .accountForm-item-field-ext-form {
+            margin-top: 24px;
+
+            .ant-form-item-label {
+                float: left;
+                text-align: left;
+            }
+        }
+    }
+}

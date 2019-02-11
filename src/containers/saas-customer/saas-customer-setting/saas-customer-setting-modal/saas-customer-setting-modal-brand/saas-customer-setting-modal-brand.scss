@@ -1,0 +1,18 @@
+@import '../../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-brand-search {
+    margin-bottom: 24px;
+
+    div.ant-form-item {
+        display: block;
+        margin-right: 0;
+    }
+}
+
+.kisure-saas-customer-modal-brand-page {
+    margin: 24px 0;
+}
+
+.kisure-saas-customer-modal-brand-button {
+    @include model-button;
+}

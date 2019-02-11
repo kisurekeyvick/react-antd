@@ -1,0 +1,39 @@
+@keyframes bounceInLeft {
+    form {
+      opacity: 0; 
+      transform: 'translate3d(-1000px, 0, 0)';
+      offset: 0;
+    }
+
+    to {
+      opacity: 1;
+      transform: 'translate3d(20px, 0, 0)'; 
+      offset: 0.6;
+    }
+}
+
+@keyframes bounceOutRight {
+    from {
+      opacity: 1; 
+      transform: 'translate3d(-20px, 0, 0)';
+      offset: 0.2;
+    }
+
+    to {
+      opacity: 0; 
+      transform: 'translate3d(1000px, 0, 0)'; 
+      offset: 1;
+    }
+}
+
+.fade-enter {
+  animation-name: bounceInLeft;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}
+  
+.fade-enter.fade-enter-active {
+  animation-name: bounceOutRight;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+}

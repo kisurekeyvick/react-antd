@@ -1,0 +1,28 @@
+@import '../../../../layouts/global.scss';
+@import '../../../../components/message/message-component.scss';
+
+.kisure-saas-customer-modal-batch-sms-content {
+    margin-bottom: 8px;
+    
+    .ant-form-item-label {
+        float: left;
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 16px;
+    }
+
+    .ant-input-disabled {
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .kisure-message-box {
+        @include message;
+        margin-bottom: 20px;
+    }
+}
+
+.kisure-saas-customer-modal-batch-sms-button {
+    @include model-button;
+}

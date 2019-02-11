@@ -1,0 +1,27 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-batch-sms-quotation-content {
+    @include formLayout;
+
+    .ant-row.ant-form-item {
+        margin-bottom: 24px;
+    }
+
+    .ant-form-item-label {
+        text-align: left;
+    }
+
+    i.autoComplete-select-icon {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.25);
+        transition: transform .3s, -webkit-transform .3s;
+    }
+
+    span.autoComplete-input>input:focus + span i.autoComplete-select-icon {
+        transform: rotate(180deg);
+    }
+}
+
+.kisure-saas-customer-modal-sms-quotation-button{
+    @include model-button;
+}

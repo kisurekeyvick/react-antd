@@ -1,0 +1,33 @@
+@import '../../layouts/global.scss';
+$blue:$color;
+
+@mixin message {
+    @include border;
+    background-color: $bgColor;
+    padding: 8px 48px;
+    border-radius: 4px;
+    text-align: left;
+    position: relative;
+
+    p.kisure-message-content {
+        margin-bottom: 0;
+
+        i {
+            color: $blue;
+            position: absolute;
+            font-size: 20px;
+            left: 16px;
+            top: 8px;
+        }
+    
+        span.blue {
+            color: $blue;
+            margin: 0 3px;
+        }
+    }
+}
+
+.kisure-message-box {
+    @include message;
+}
+

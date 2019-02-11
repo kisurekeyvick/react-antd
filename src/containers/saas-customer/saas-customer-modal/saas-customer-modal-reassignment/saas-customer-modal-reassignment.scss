@@ -1,0 +1,10 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-reassignment-content {
+    @include formLayout;
+    margin-bottom: 24px;
+}
+
+.kisure-saas-customer-modal-reassignment-button {
+    @include model-button;
+}

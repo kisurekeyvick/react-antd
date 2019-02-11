@@ -1,0 +1,45 @@
+@mixin kisure-head-layout {
+    background-color: #fff;
+    padding: 0 16px 16px;
+}
+
+@mixin kisure-content-layout {
+    background-color: #fff;
+    margin: 24px;
+}
+
+$color: #1890FF; // #9254de;
+$borderColor: #91d5ff;  // #d3adf7
+$bgColor: #e6f7ff; // #f9f0ff;
+$errorColor: #fc7963;
+
+@mixin border($width:1px, $style: solid) {
+    border-width: $width;
+    border-color: $borderColor;
+    border-style:  $style;
+}
+
+@mixin model-button {
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px 0 0;
+    margin: 0 -24px -15px -24px;
+    text-align: right;
+
+    button {
+        margin-left: 8px;
+    }
+}
+
+@mixin formLayout {
+    .ant-form-item-label {
+        float: left;
+    }
+
+    .ant-form-item-control {
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,33 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-setting-bussinessRemind {
+    .kisure-saas-customer-setting-bussinessRemind-title {
+        p {
+            border-bottom: 1px dashed #ddd;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+    }
+
+    .kisure-saas-customer-setting-bussinessRemind-content {
+        .ant-form-item-control {
+            text-align: left;
+        }
+
+        .editable-day-row {
+            div.ant-form-item {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .kisure-saas-customer-setting-bussinessRemind-button {
+        text-align: center;
+        
+        button:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}

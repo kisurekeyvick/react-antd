@@ -1,0 +1,20 @@
+@import '../../../layouts/global.scss';
+
+.user-register {
+    .user-register-form {
+        width: 400px;
+        margin: 0 auto;
+
+        .formItem-item {
+            margin: 0 2px 24px;
+        }
+
+        .ant-form-explain {
+            text-align: left;
+        }
+    }
+
+    .user-register-reLogin {
+        text-align: right;
+    }
+}

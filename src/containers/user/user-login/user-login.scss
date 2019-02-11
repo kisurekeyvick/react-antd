@@ -1,0 +1,60 @@
+@import '../../../layouts/global.scss';
+
+.user-login {
+    .ant-tabs-bar {
+        border-bottom: 0px;
+    }
+
+    .user-login-form {
+        width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+
+        .checkbox-remember {
+            float: left;
+        }
+
+        .login-form-forgot {
+            float: right;
+            color: $color;
+        }
+        
+        .login-form-button {
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .ant-form-explain {
+            text-align: left;
+        }
+
+        .formItem-item {
+            margin: 0 2px 24px;
+        }
+
+        .other-login-icon {
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.2);
+            margin-left: 16px;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: color 0.3s;
+        
+            &:hover {
+              color: $color;
+            }
+        }
+
+        .other-login {
+            text-align: left;
+            margin-top: 24px;
+            line-height: 22px;
+
+            a {
+                float: right;
+                color: $color;
+            }
+        }
+    }
+}
+  

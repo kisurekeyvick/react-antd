@@ -1,0 +1,251 @@
+@import '../../layouts/global.scss';
+
+@mixin transition {
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@mixin point {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: -moz-radial-gradient(rgba(92, 153, 241, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+    background: -webkit-radial-gradient(rgba(92, 153, 241, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+    background: radial-gradient(rgba(92, 153, 241, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+    top: 50%;
+    margin-top: -12px;
+    margin-left: -9px;
+    cursor: pointer;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.audio-box {
+    min-width: 300px;
+
+    .audio-detail {
+        height: 65px;
+
+        & > div.audio-detail-item {
+            float: left;
+            margin-right: 16px; 
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        div.play-box {
+            height: 100%;
+            vertical-align: middle;
+
+            & > a {
+                font-size: 40px;
+                line-height: 65px;
+            }
+        }
+
+        div.pathway-box {
+            min-width:250px;
+            margin-top: 13px;
+            margin-right: 28px;
+
+            .audio-progress {
+                padding: 0 0 0 0px;
+                height: 2px;
+                position: relative;
+                width: 250px;
+
+                .audio-progrees-detail {
+                    height: 100%;
+                    width: 100%;
+                    background: #ebebeb;
+                    position: relative;
+                    cursor: pointer;
+
+                    .audio-progrees-past{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        overflow: hidden;
+                        background: $color;
+                        z-index: 2;
+
+                        @include transition;
+                    }
+
+                    .audio-progrees-all {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        overflow: hidden;
+                        background: #d9d9d9;
+                        z-index: 1;
+                    }
+                }
+
+                .audio-audio-origin {
+                    width: 6px;
+                    height: 6px;
+                    margin-top: -3px;
+                    margin-left: 3px;
+                    border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    background-color: $color;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    z-index: 2;
+
+                    @include transition;
+
+                    &::before {
+                        @include point;
+                    }
+                }
+            }
+        }
+
+        div.speed-box {
+            span.audio-speed-button {
+                padding: 2px 7px;
+                border-radius: 5px;
+                background: $color;
+                color: #fff;
+                cursor: pointer;
+                font-size: 12px;
+
+                & > i {
+                    font-size: 12px;
+                    margin-left: 3px;
+                }
+            }
+
+            & > div:first-child {
+                margin-top: 15px;
+                text-align: right;
+            }
+
+            & > div:last-child > p {
+                margin-bottom: 0;
+            }
+        }
+
+        div.audio-operation {
+            height: 100%;
+            vertical-align: middle;
+
+            span {
+                cursor: pointer;
+            }
+
+            span.audio-operation-playStatus {
+                font-size: 23px;
+                margin-right: 16px;
+                line-height: 65px;
+
+                i {
+                    color: $color;
+                }
+            }
+
+            span.audio-operation-sound {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.audio-status-menu {
+    margin: -12px -16px;
+    margin-bottom: 0px;
+
+    a {
+        display: block;
+        padding: 10px 15px;
+
+        &:hover {
+            background-color: $color;
+            color: #fff;
+        }
+
+        & > i {
+            margin-right: 10px;
+        }
+    }
+}
+
+.audio-speed-slide {
+    width: 150px;
+
+    p {
+        text-align: center;
+    }
+}
+
+div.audio-operation-sound {
+    font-size: 20px;
+    position: relative;
+    margin-top: 70px;
+    overflow: visible;
+
+    .audio-sound-progress {
+        width: 2px;
+        height: 60px;
+        background: #cecfd4;
+        position: absolute;
+        top: -65px;
+        cursor: pointer;
+    
+        .audio-sound-current {
+            display: inline-block;
+            width: 2px;
+            height: 50%;
+            background-color: #3792ef;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            -webkit-transition: height .2s linear;
+            transition: height .2s linear;
+        }
+    
+        .audio-sound-point {
+            width: 6px;
+            height: 6px;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            background-color: $color;
+            margin-left: -2px;
+    
+            &::before {
+                @include point;
+            }
+        }
+    
+        span.volume-event {
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            left: -9px;
+        }
+    }
+
+    .audio-operation-sound-icon {
+        i {
+            color: $color;
+        }
+    }
+}
+

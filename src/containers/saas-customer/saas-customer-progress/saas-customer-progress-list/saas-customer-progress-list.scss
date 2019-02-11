@@ -1,0 +1,30 @@
+@import '../../../../layouts/global.scss';
+
+.customer-progress-list-box {
+    @include kisure-content-layout;
+    padding: 24px;
+
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .customer-progress-list-operation {
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    .customer-progress-list-tableInfo {
+        .customer-progress-list-tableInfo-msg {
+            margin-top: 24px;
+            margin-bottom: 1em;
+        }
+
+        .ant-table-body td, .ant-table-body th { 
+            white-space: nowrap; 
+        }
+
+        .customer-progress-list-pageInfo {
+            margin-top: 24px;
+        }
+    }
+}

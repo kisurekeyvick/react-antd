@@ -1,0 +1,34 @@
+@import '../../../../layouts/global.scss';
+
+.customer-record-list-box {
+    @include kisure-content-layout;
+    padding: 24px;
+
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .customer-record-list-tableInfo {
+        .customer-record-list-tableInfo-msg {
+            margin-top: 24px;
+            margin-bottom: 1em;
+        }
+
+        .ant-table-body td, .ant-table-body th { 
+            white-space: nowrap; 
+        }
+
+        .customer-record-list-pageInfo {
+            margin-top: 24px;
+        }
+
+        span.customer-span-name-phone {
+            i {
+                transform: rotateY(180deg);
+                color: $color;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}

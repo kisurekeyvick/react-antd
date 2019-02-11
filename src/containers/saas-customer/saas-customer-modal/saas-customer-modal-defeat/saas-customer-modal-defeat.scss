@@ -1,0 +1,35 @@
+@import '../../../../layouts/global.scss';
+@import '../../../../components/message/message-component.scss';
+
+.kisure-saas-customer-modal-defeat-content {
+    margin-bottom: 8px;
+    margin-top: -10px;
+    
+    .ant-form-item-label {
+        float: left;
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 24px;
+    }
+
+    .ant-input-disabled {
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .kisure-message-box {
+        @include message;
+        margin-bottom: 20px;
+    }
+}
+
+.kisure-saas-customer-modal-defeat-button {
+    @include model-button;
+
+    .red, .red:hover {
+        color: #fff;
+        background-color: #ff4d4f;
+        border-color: #ff4d4f;
+    }
+}

@@ -1,0 +1,70 @@
+.kisure-saas-customer-setting-account-discount {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 24px;
+
+    div.title {
+        font-size: 15px;
+        color: #222222;
+        line-height: 28px;
+        margin-bottom: 8px;
+        border-bottom: 1px dotted #E8E8E8;
+        padding-left: 0;
+        line-height: 45px !important;
+        padding-bottom: 50px;
+
+        label {
+            margin-right: 24px;
+            float: left;
+        }
+
+        span.edit {
+            float: right;
+            cursor: pointer;
+            width: 105px;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: all 0.3s ease-out;
+            text-align: right;
+            padding-right: 24px;
+
+            span.edit-operation {
+                display: inline-block;
+                transition: all 0.3s ease-out;
+
+                button:not(:last-child) {
+                    margin-right: 8px;       
+                }
+            }
+        }
+    }
+
+    .kisure-saas-customer-setting-account-discount-form {
+        .ant-form-item>div.ant-form-item-label {
+            float: left;
+        }
+
+        .ant-form-item-control {
+            text-align: left;
+        }
+    }
+
+    .kisure-saas-customer-setting-account-item {
+        .kisure-saas-customer-setting-account-item-skeleton {
+            background-color: #fff;
+            border: 1px solid #f2f2f2;
+            transition: .2s ease-in-out;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px #e5e5e5;
+            padding: 24px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            cursor: pointer;
+            
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+}

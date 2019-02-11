@@ -1,0 +1,40 @@
+@mixin ant-layout-main-base {
+  transition: all 0.3s ease;
+  // overflow: auto;
+  height: 100%;
+}
+
+div.logo {
+  img {
+    width: 50px;
+    opacity: 0.5;
+  }
+}
+
+.span-link {
+  .selected {
+    color: #fff;
+  }
+}
+
+.header-icon {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.kisure-breadcrumb {
+  background-color: #fff;
+  padding: 0px 32px 0;
+}
+
+.kisure-ant-layout-main-collapse {
+  @include ant-layout-main-base;
+}
+
+.kisure-ant-layout-main {
+  @include ant-layout-main-base;
+}

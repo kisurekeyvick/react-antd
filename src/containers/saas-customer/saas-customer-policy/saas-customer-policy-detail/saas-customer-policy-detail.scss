@@ -1,0 +1,116 @@
+@import '../../../../layouts/global.scss';
+
+@mixin formLayout {
+    .ant-form-item-label {
+        float: left;
+    }
+
+    .ant-form-item-control {
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 12px;
+    }
+}
+
+.kisure-customer-policy-detail {
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .kisure-customer-policy-detail-customerInfo {
+        background-color: #fff;
+        padding: 10px 32px 16px;
+
+        @include formLayout;
+
+        .customerName label, .customerName span {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .customerName span {
+            color: $color;
+        }
+    }
+
+    .kisure-customer-policy-detail-content {
+        margin: 24px;
+
+        .title {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0px;
+            font-size: 20px;
+            padding: 16px 24px;
+            text-align: left;
+        }
+
+        & > div {
+            margin-bottom: 24px;
+            background-color: #fff;
+        }
+
+        .kisure-customer-policy-detail-carInfo,
+        .kisure-customer-policy-detail-personInfo,
+        .kisure-customer-policy-detail-policyInfo,
+        .kisure-customer-policy-detail-giftInfo {
+            @include formLayout;
+
+            .content {
+                padding: 24px;
+            }
+        }
+
+        .kisure-customer-policy-detail-policyInfo {
+            p.subtitle {
+                text-align: left;
+                font-size: 16px;
+                color: #222222;
+                line-height: 28px;
+                padding: 16px 0px;
+                margin-bottom: 15px;
+                border-bottom: 1px dotted #E8E8E8;
+
+                & > label {
+                    float: right;
+                }
+            }
+
+            span.red {
+                color: $errorColor;
+                font-size: 18px;
+                margin: 0 8px;
+            }
+
+            .kisure-customer-policy-detail-compulsory {
+                margin-bottom: 24px;
+            }
+
+            .kisure-customer-policy-detail-baseInfo {
+                margin-bottom: 24px;
+
+                & > p{
+                    text-align: left;
+                    
+                    & > span:last-child {
+                        float: right;
+                    }
+                }
+            }
+
+            .Plabel:after {
+                content: ":";
+                margin: 0 8px 0 2px;
+                position: relative;
+                top: -0.5px;
+            }
+
+            .kisure-customer-policy-detail-business {
+                .kisure-customer-policy-detail-business-table {
+
+                }
+            }
+        }
+    }
+}

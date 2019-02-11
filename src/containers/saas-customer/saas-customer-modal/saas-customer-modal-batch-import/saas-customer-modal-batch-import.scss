@@ -1,0 +1,91 @@
+@import '../../../../layouts/global.scss';
+@import '../../../../components/message/message-component.scss';
+
+.kisure-saas-customer-modal-batch-import-content {
+    max-width: 610px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    
+    .ant-form-item-label {
+        float: left;
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 16px;
+    }
+
+    .kisure-message-box {
+        @include message;
+        margin-bottom: 20px;
+    }
+
+    .kisure-saas-customer-modal-batch-import-steps {
+        margin-bottom: 18px;
+
+        span.ant-steps-icon {
+            display: inline-block;
+            line-height: 20px;
+            height: 25px;
+            width: 25px;
+            font-size: 17px;
+
+            i {
+                line-height: 25px;
+            }
+        }
+
+        div.setp-box {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            height: 25px;
+
+            &.step-finish {
+                border-color: $color;
+            }
+        }
+    }
+
+    .kisure-saas-customer-modal-batch-import-explain {
+        .kisure-saas-customer-modal-batch-import-explain-upload {
+            .upload-box {
+                margin-bottom: 24px;
+
+                p.upload-content {
+                    margin-bottom: 0;
+                    text-indent: 15px;
+                }
+            }
+        }
+    }
+
+    .kisure-saas-customer-modal-batch-import-result {
+        max-width: 368px;
+        background: #FAFAFA;
+        border-radius: 4px;
+        margin: 0 auto;
+        padding: 16px 48px;
+
+        .success {
+            color: $color;
+        }
+
+        .error {
+            color: $errorColor;
+        }
+
+        & > p {
+            span {
+                margin: 0 5px;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.kisure-saas-customer-modal-batch-import-button {
+    @include model-button;
+}

@@ -1,0 +1,28 @@
+@import '../../../layouts/global.scss';
+
+.kisure-antd-report-container {
+    .kisure-antd-report-head {
+        @include kisure-head-layout;
+        text-align: left;
+        padding: 0 34px 16px;
+
+        .kisure-antd-report-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .kisure-antd-report-store-info {
+
+        }
+
+        .kisure-antd-report-btn-group {
+            button {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .kisure-antd-report-content {
+        padding: 24px;
+    }
+}

@@ -1,0 +1,70 @@
+@import '../../../../layouts/global.scss';
+@import '../../../../components/message/message-component.scss';
+
+.kisure-saas-customer-modal-success-order-content {
+    margin-bottom: 24px;
+    margin-top: -15px;
+    
+    .ant-form-item-label {
+        float: left;
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 16px;
+    }
+
+    .ant-input-disabled {
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    p.title{
+        font-size: 16px;
+        color: #333;
+        border-bottom: 1px dotted #e8e8e8;
+        padding: 16px 0;
+        margin-top: 24px;
+    }
+
+    &>.kisure-saas-customer-modal-content {
+        margin-bottom: 24px;
+    }
+
+    .kisure-message-box {
+        @include message;
+        margin-bottom: 20px;
+    }
+
+    .kisure-saas-customer-modal-ins-detail {
+        .ant-row.ant-form-item {
+            display: inline-block;
+        }
+
+        .insPlantitle {
+            margin-bottom: 16px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #eee;
+            text-indent: 24px;
+            border-radius: 4px;
+        }
+
+        ul.ant-skeleton-paragraph {
+            padding-left: 0;
+        }
+    }
+
+    .kisure-saas-customer-modal-gift-table {
+        .ant-input-number {
+            border-radius: 0;
+        }
+
+        .ant-row.ant-form-item {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.kisure-saas-customer-modal-success-order-button {
+    @include model-button;
+}

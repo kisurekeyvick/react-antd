@@ -1,0 +1,29 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-modal-defeatReview-content {
+    margin-bottom: 8px;
+    margin-top: -10px;
+    
+    .ant-form-item-label {
+        float: left;
+        text-align: left;
+    }
+
+    .ant-row.ant-form-item {
+        margin-bottom: 24px;
+    }
+
+    .ant-input-disabled {
+        color: rgba(0, 0, 0, 0.65);
+    }
+}
+
+.kisure-saas-customer-modal-defeatReview-button {
+    @include model-button;
+
+    .red, .red:hover {
+        color: #fff;
+        background-color: #ff4d4f;
+        border-color: #ff4d4f;
+    }
+}

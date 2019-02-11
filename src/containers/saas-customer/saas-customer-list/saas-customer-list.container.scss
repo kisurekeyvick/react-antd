@@ -1,0 +1,101 @@
+@import '../../../layouts/global.scss';
+
+$warn: #fc7963;
+$commonColor: #929292;
+
+.head-workspace {
+    @include kisure-head-layout;
+    min-height: 80px;
+
+    .loadingSearchControl {
+        padding: 24px;
+        color: $color;
+        line-height: 25px;
+        
+        i {
+          margin-right: 8px;
+          font-size: 20px;
+        }
+    }
+
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+
+    .head-workspace-item {
+        cursor: pointer;
+        padding: 10px;
+
+        &>p:first-child {
+            margin-bottom: 10px;
+        }
+
+        &>p {
+            color: $commonColor;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid #e9e9e9;
+        }
+
+        &:hover, &.selected { 
+            background-color: $color;
+            border-radius: 5px;
+
+            &>p {
+                color: #fff;
+            }
+        }
+
+        p.head-workspace-item-value {
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: 600;
+
+            &.warn {
+                color: $warn;
+            }
+        }
+    }
+}
+
+.customer-list-content {
+    @include kisure-content-layout;
+    padding: 24px;
+
+    .customer-list-search-control {
+        
+    }
+
+    .customer-list-button-control {
+        text-align: left;
+        margin-bottom: 24px;
+
+        .customer-list-button {
+            margin-right: 8px;
+        }
+    }
+
+    .customer-list-message {
+        margin-bottom: 1em;
+    }
+
+    .customer-list-tableInfo {
+        .ant-table-body td, .ant-table-body th { 
+            white-space: nowrap; 
+        }
+
+        .customer-list-pageInfo {
+            margin-top: 24px;
+        }
+
+        span.customer-span-name-phone {
+            i {
+                transform: rotateY(180deg);
+                color: $color;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}

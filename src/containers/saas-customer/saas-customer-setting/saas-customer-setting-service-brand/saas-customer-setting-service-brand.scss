@@ -1,0 +1,71 @@
+@import '../../../../layouts/global.scss';
+
+.kisure-saas-customer-setting-brand {
+    .kisure-saas-customer-setting-brand-list {
+        padding: 10px 0;
+
+        img.barandImage {
+            width: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .brand-list-div {
+                width: 150px;
+                float: left;
+                margin-right: 24px;
+                cursor: pointer;
+                position: relative;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-shadow: 5px 5px 10px #ddd;
+                overflow: hidden;
+
+            span.close-span {
+                position: absolute;
+                cursor: pointer;
+                top: -0px;
+                right: -0px;
+                display: none;
+                width: 0;
+                height: 0;
+                border-top: 25px solid $errorColor;
+                border-left: 50px solid transparent;
+            }
+
+            i {
+                font-size: 13px;
+                color: #fff;
+                position: absolute;
+                top: -23px;
+                right: 3px;
+            }
+
+            &:hover {
+                border-style: dashed;
+                border-color: $errorColor;
+
+                & span.close-span {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .kisure-saas-customer-setting-brand-page {
+        margin: 24px 0;
+    }
+
+    .kisure-saas-customer-setting-brand-button {
+        text-align: left;
+        
+        button:not(:last-child) {
+            margin-right: 8px;
+        }
+
+        & > p {
+            margin-top: 12px;
+        }
+    }
+}

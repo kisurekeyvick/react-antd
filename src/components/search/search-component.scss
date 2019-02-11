@@ -1,0 +1,56 @@
+@import '../../layouts/global.scss';
+
+@mixin animate {
+  transition: opacity 0s;
+  transition: height 1s ease-in-out;
+}
+
+.kisure-antd-advanced-search-form {
+    background: #fff;
+
+    .ant-form-item {
+      text-align: left;
+      height: 39px;
+    }
+
+    ul.ant-skeleton-paragraph {
+        padding-left: 0;
+    }
+    
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+    
+    .kisure-col {
+      @include animate;
+
+      &.kisure-hide-col {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+      }
+
+      &.kisure-show-col {
+        opacity: 1;
+      }
+    }
+
+    .loadingSearchControl {
+      padding: 24px;
+      color: $color;
+      line-height: 25px;
+      
+      i {
+        margin-right: 8px;
+        font-size: 20px;
+      }
+    }
+}
+
+@media (min-width: 576px) {
+  .kisure-antd-advanced-search-form {
+    .ant-form-item {
+      display: flex;
+    }
+  }
+}
