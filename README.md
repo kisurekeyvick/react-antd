@@ -30,7 +30,7 @@ node_modules/react-scripts/config/webpack.config.dev.js
     exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.(sass|scss)$/],
     loader: require.resolve('file-loader'),
     options: {
-        name: 'static/media/[name].[hash:8].[ext]',
+        name: 'static/media/[name].[hash:8].[ext]'
     },
 },
 {test: /\.(sass|scss)$/, 
@@ -121,4 +121,5 @@ node_modules/react-scripts/config/webpack.config.dev.js
     },
 },
 ```
-## mock数据暂时不上传，待做修改
+## mock数据暂时不上传
+- 部分数据表面不够真实，有待修改
