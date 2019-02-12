@@ -51,7 +51,9 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
             如果是初次加载，则加载数据
         */
         if (otherArgs.isInit || this.state.indicators !== type && !otherArgs.isInit) {
-            const params = {};
+            const params = {
+                
+            };
 
             this.setState({
                 loadingIndicators: true
@@ -90,7 +92,9 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
                 loadingCharts: true,
             });
     
-            const params = {};
+            const params = {       
+                type
+            };
     
             api.queryPersonalCharts(params).then((res: any) => {
                 const state = {
