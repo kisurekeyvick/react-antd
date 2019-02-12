@@ -22,6 +22,10 @@
         img {
             width: 200px;
             margin: 0 auto;
-        }   
+        }    
+    }
+
+    div#gsapBox {
+        z-index: -100;
     }
 }
