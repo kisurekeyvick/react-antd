@@ -1,15 +1,25 @@
 import * as React from 'react';
-import { Row, Col, Radio, Spin, Alert, DatePicker, Table} from 'antd';
+import { Row, Col, Radio, Spin, Alert, DatePicker, Table, Card, Icon } from 'antd';
 import * as moment from 'moment';
 import { tableColumns } from './saas-customer-report-personal-config';
 import * as _ from 'lodash';
 import { api } from 'src/_mock/api';
+import * as echarts from 'echarts';
 import './saas-customer-report-personal.scss';
 
+interface IChartVal {
+    xAxis: any[];
+    yAxis: any[];
+}
+
 const { RangePicker } = DatePicker;
+const { Grid } = Card;
 
 export default class SaaSCustomerReportPersonal extends React.PureComponent<any, any> {
     public config: any;
+    public chartRef: any;
+    public echartsTarget: any;
+    public gridStyle: any;
 
     constructor(public props: any) {
         super(props);
@@ -31,12 +41,24 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
         this.config = {
             tableColumns: _.cloneDeep(tableColumns)
         };
+
+        this.chartRef = React.createRef();
+        this.gridStyle = {
+            width: '25%',
+            textAlign: 'left',
+        };
     }
 
     componentDidMount() {
         this.queryPersonalIndicators('week', {isInit: true});
         this.queryChartsDataForInsurance('week', 'chartsTime', {isInit: true});
         this.queryworkloadDetailsDataForInsurance('week', {isInit: true});
+
+        const self = this;
+        window.addEventListener('resize', function() {
+            if (self.echartsTarget)
+                self.echartsTarget.resize();
+        });
     }
 
     /**
@@ -51,9 +73,7 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
             如果是初次加载，则加载数据
         */
         if (otherArgs.isInit || this.state.indicators !== type && !otherArgs.isInit) {
-            const params = {
-                
-            };
+            const params = {};
 
             this.setState({
                 loadingIndicators: true
@@ -92,7 +112,7 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
                 loadingCharts: true,
             });
     
-            const params = {       
+            const params = {
                 type
             };
     
@@ -103,9 +123,13 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
                 };
     
                 if (res && res.status === 200) {
+                    const chartsData = res.data.result || { xAxis: [], yAxis: [] };
+
                     this.setState({...state, ...{
-                        chartsData: res.data.result || []
+                        chartsData
                     }});
+
+                    this.createChart('#chartsDataForIns', chartsData, 'line');
                 } else {
                     this.setState(state);
                 }
@@ -150,7 +174,17 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
 
                 if (res && res.status === 200) {
                     this.setState({...state, ...{
-                        workDetailsData: res.data.result || []
+                        workDetailsData: (res.data.result || []).map((item: any, index: number) => {
+                            item['name'] = item['salesmanName'];
+                            item['mount'] = item['followCount'];
+                            item['telephoneCount'] = item['validCallCount'];
+                            item['renewCount'] = item['renewalCount'];
+                            item['customerCount'] = item['createCustomerCount'];
+                            item['totalCost'] = item['totalPremium'];
+                            item['rate'] = item['taskCompletionRate'];
+                            item['key'] = index;
+                            return item;
+                        })
                     }});
                 } else {
                     this.setState(state);
@@ -169,6 +203,56 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
             const endTime: string = moment(new Date(e[1].toDate())).format('YYYY-MM-DD HH:mm');
             this.queryworkloadDetailsDataForInsurance([startTime, endTime], {isInit: false}, 'workDetailsDetailTime');
         }
+    }
+
+    /**
+     * 创建图表
+     * @param dom  图表嵌入目标
+     * @param data 数据
+     * @param type 图表种类
+     */
+    public createChart = (dom: string, source: IChartVal, type: string) => {
+        const domTarget: any = this.chartRef['current'];
+        this.echartsTarget = echarts.init(domTarget);
+        this.echartsTarget.setOption({
+            tooltip: {
+                trigger: 'axis',
+                axisPointer : {
+                    type : 'shadow'
+                },
+                formatter: function(params: any) {
+                    params = params[0];
+                    return `
+                        ${params['axisValue']}<br/>
+                        值：${params['value']}
+                    `;
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: source['xAxis']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: source['yAxis'],
+                type,
+                areaStyle: {},
+                smooth: true,
+                label: {
+                    normal: {
+                        show: true,
+                        textBorderColor: '#000',
+                        textBorderWidth: 1
+                    }
+                },
+            }]
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', () => {});
     }
 
     public render() {
@@ -195,12 +279,32 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
                                     {
                                         this.state.indicatorsData.length === 0 ? 
                                         <Alert className='kisure-antd-report-personal-indicators-warn' message='未查询到核心指标' type='warning' showIcon={true} /> : 
-                                        <div className='kisure-antd-report-personal-indicators'>
-                                            {
-                                                this.state.indicatorsData.map((indicator: any) => {
-                                                    return 'test';
-                                                })
-                                            }
+                                        <div className='kisure-antd-report-personal-indicators-card'>
+                                            <Card>
+                                                {
+                                                    this.state.indicatorsData.map((indicator: any, index: number) => {
+                                                        return (
+                                                            <Grid key={index} style={this.gridStyle} className='kisure-antd-report-personal-indicators-card-grid'>
+                                                                <p className='grid-title'><Icon type="book" /><span>{indicator.name}</span></p>
+                                                                <p className='grid-firstValue'>{indicator.firstValue}</p>
+                                                                {
+                                                                    indicator.secondValue === '0' ? 
+                                                                    <p className='grid-no-compare'>无环比结果</p> :
+                                                                    <p className='grid-has-compare'>
+                                                                        比同期
+                                                                        {
+                                                                            +(indicator.secondValue.replace('%', '')) > 0 ?
+                                                                            <Icon type='caret-up' className='caret-up'/> :
+                                                                            <Icon type='caret-down' className='caret-down' />
+                                                                        }
+                                                                        <span>{indicator.secondValue}</span>
+                                                                    </p>
+                                                                }
+                                                            </Grid>
+                                                        );  
+                                                    })
+                                                }
+                                            </Card>
                                         </div> 
                                     }
                                 </Col>
@@ -236,9 +340,7 @@ export default class SaaSCustomerReportPersonal extends React.PureComponent<any,
                     </div>
                     <div>
                         <Spin tip="Loading..." spinning={this.state.loadingCharts}>
-                            <div id='charts'>
-                                chart content
-                            </div>
+                            <div id='charts' ref={this.chartRef} />
                         </Spin>
                     </div>
                 </div>

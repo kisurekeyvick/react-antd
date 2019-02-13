@@ -38,11 +38,40 @@
 
         .kisure-antd-report-personal-indicators-content {
             background-color: #fff;
-            padding: 24px;
             margin-top: 4px;
 
             .kisure-antd-report-personal-indicators-warn {
                 text-align: left;
+            }
+
+            .kisure-antd-report-personal-indicators-card {
+                .kisure-antd-report-personal-indicators-card-grid {
+                    cursor: pointer;
+                }
+
+                .grid-title {
+                    span {
+                        margin-left: 8px;
+                    }
+                }
+
+                .grid-no-compare, .grid-has-compare {
+                    margin-bottom: 0;
+                }
+
+                .grid-has-compare {
+                    .caret-up {
+                        color:green;
+                    }
+
+                    .caret-down {
+                        color: #fc7963;
+                    }
+
+                    .caret-up, .caret-down {
+                        margin: 0 10px;
+                    }
+                }
             }
         }
     }
@@ -66,6 +95,10 @@
         .kisure-antd-report-personal-charts-btnGroup {
             text-align: left;
             padding: 24px;
+        }
+
+        div#charts {
+            height: 400px;
         }
     }
 

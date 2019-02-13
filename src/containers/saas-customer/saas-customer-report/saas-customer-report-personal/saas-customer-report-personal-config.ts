@@ -32,7 +32,7 @@ export const tableColumns: ITableColumns[] = [
         key: 'policyCount',
     },
     {
-        title: '保费总额',
+        title: '保费总额(元)',
         dataIndex: 'totalCost',
         key: 'totalCost',
     },

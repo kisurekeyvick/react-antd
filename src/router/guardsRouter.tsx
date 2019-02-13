@@ -27,7 +27,7 @@ export default class GuardRoute extends React.Component<any, any> {
         });
 
         return (
-            false ? <SlideLayout location={location}>
+            true ? <SlideLayout location={location}>
                 <div>   
                     <Switch>
                         { routes }
