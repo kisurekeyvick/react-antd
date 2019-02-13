@@ -124,8 +124,10 @@ node_modules/react-scripts/config/webpack.config.dev.js
 ## mock数据暂时不上传
 - 部分数据表面不够真实，有待修改
 
-## 吐槽一下
-- antd有些组件interface给了限制，有时候会报错：Type '{ .... }' is not assignable to type 'IntrinsicAttributes & ...'
+## Bug缺陷
+```
+antd有些组件interface给了限制，有时候会报错：Type '{ .... }' is not assignable to type 'IntrinsicAttributes & ...'
+```
 - Grid.d.ts
 ```ts
 export interface CardGridProps {
