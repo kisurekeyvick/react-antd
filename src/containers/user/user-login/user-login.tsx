@@ -92,7 +92,7 @@ class UserLogin extends React.PureComponent<any, any> {
                         
                         this.props.history.push('/saas/customer/list');
                     }
-                });
+                });  
             }
         });
     }

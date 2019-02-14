@@ -8,9 +8,9 @@
     margin: 24px;
 }
 
-$color: #1890FF; // #9254de;
-$borderColor: #91d5ff;  // #d3adf7
-$bgColor: #e6f7ff; // #f9f0ff;
+$color: #9254de; // #9254de;  1890FF
+$borderColor: #d3adf7;  // #d3adf7  91d5ff
+$bgColor: #f9f0ff; // #f9f0ff;  e6f7ff
 $errorColor: #fc7963;
 
 @mixin border($width:1px, $style: solid) {

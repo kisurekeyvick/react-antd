@@ -123,7 +123,40 @@ node_modules/react-scripts/config/webpack.config.dev.js
 ```
 ## mock数据暂时不上传
 - 部分数据表面不够真实，有待修改
+## 按需加载antd样式，全局颜色配置
+- config-overrides.js
+```js
+const tsImportPluginFactory = require('ts-import-plugin');
+const { getLoader } = require("react-app-rewired");
+const rewireLess = require('react-app-rewire-less');
 
+module.exports = function override(config, env) {
+    const tsLoader = getLoader(
+        config.module.rules,
+        rule =>
+          rule.loader &&
+          typeof rule.loader === 'string' &&
+          rule.loader.includes('ts-loader')
+    );
+
+    tsLoader.options = {
+        getCustomTransformers: () => ({
+            before: [ tsImportPluginFactory({
+                libraryDirectory: 'es',
+                libraryName: 'antd',
+                style: true
+            }) ]
+        })
+    };
+
+  config = rewireLess.withLoaderOptions({
+      javascriptEnabled: true,
+      modifyVars: { "@primary-color": "#9254de" },
+  })(config, env);
+
+  return config;
+}
+```
 ## Bug缺陷
 ```
 antd有些组件interface给了限制，有时候会报错：Type '{ .... }' is not assignable to type 'IntrinsicAttributes & ...'

@@ -98,7 +98,7 @@ class SaaSCustomerSetting extends React.Component<any, any> {
                                 { this.state.serviceBrandVisible && <KISUREServiceBrand /> }
                             </Panel>
                         </Collapse> : <Skeleton active={true} paragraph={{ rows: 10 }}/>
-                    }
+                    }  
                 </Spin>
             </div>
         )
