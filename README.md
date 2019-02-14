@@ -8,8 +8,7 @@
 ### react-app-rewired
 - react-app-rewired的版本为1.6.2，如果是高于1.6.2的版本，则会报错
 ```
-antd按需加载样式，就需要使用babel-import-plugin，在使用这个插件的时候，还需要react-app-rewired
-    在2.0版本一下的时候
+antd按需加载样式，就需要使用babel-import-plugin，在使用这个插件的时候，还需要react-app-rewired在2.0版本一下的时候
 ```
 #### 解决方法
 - 降版本，在package.json包里面："react-app-rewired": "1.6.2",
