@@ -22,15 +22,6 @@ const userRouter: ILoadableRoute[] = [
 ];
 
 const routeConfig: ILoadableRoute[] = [
-    {
-        path: '/baseJs',
-        component: Loadable({
-            loader: () => import('src/containers/base-js/index'),
-            loading: () => null,
-            modules: ['baseJs']
-        }),
-        exact: true
-    },
     { 
         path: '/saas/customer/list',  
         component: Loadable({
@@ -119,14 +110,14 @@ const routeConfig: ILoadableRoute[] = [
         }),
         exact: true,
     }, 
-    // {
-    //     path: '',
-    //     component: Loadable({
-    //         loader: () => import('src/containers/exception/exception'),
-    //         loading: () => null,
-    //         modules: ['404']
-    //     })
-    // }
+    {
+        path: '',
+        component: Loadable({
+            loader: () => import('src/containers/exception/exception'),
+            loading: () => null,
+            modules: ['404']
+        })
+    }
 ];
 
 
