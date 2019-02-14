@@ -6,7 +6,8 @@ import './user.scss';
 
 export default class User extends React.PureComponent<any, any> {
     static propTypes = {
-        param: PropTypes.string.isRequired
+        param: PropTypes.string.isRequired,
+        history: PropTypes.any.isRequired
     }
 
     constructor(public props: any) {
@@ -14,13 +15,16 @@ export default class User extends React.PureComponent<any, any> {
     }
 
     public render() {
+        const loginProps = {
+            history: this.props.history
+        };
+
         return <div className='user-container-box'>
                     {
                         this.props.param === 'login' ?
-                        <UserLogin /> :
+                        <UserLogin {...loginProps}/> :
                         <UserRegister />
                     } 
                 </div>
     }
 }
-

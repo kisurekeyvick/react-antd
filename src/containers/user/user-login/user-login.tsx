@@ -3,6 +3,7 @@ import { Form, Input, Button, Checkbox, Icon, Tabs, Row, Col} from 'antd';
 import { Link } from "react-router-dom";
 import * as _ from 'lodash';
 import * as moment from 'moment';
+import * as PropTypes from 'prop-types';
 import { IForm, loginFormItem, loginPhoneFormItem } from './user-login-config';
 import { validTelePhone } from 'src/service/validate';
 import { api } from 'src/_mock/api'; 
@@ -13,6 +14,10 @@ const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 
 class UserLogin extends React.PureComponent<any, any> {
+    static propTypes = {
+        history: PropTypes.any.isRequired
+    }
+
     public config: any;
     public interval: any;
     private _cookie: CookieService;
@@ -84,6 +89,8 @@ class UserLogin extends React.PureComponent<any, any> {
                         for(const key in res.data.result) {
                             this._cookie.setCookie(`_${key}`, res.data.result[key], endTime);
                         }
+                        
+                        this.props.history.push('/saas/customer/list');
                     }
                 });
             }
