@@ -30,6 +30,8 @@ export default class UserLayout extends React.Component<any, any> {
     }
 
     public render() {
+        const { params } = this.props.match;
+
         return (
             <div className='layout-login-box' >
                 <Row>
@@ -39,7 +41,7 @@ export default class UserLayout extends React.Component<any, any> {
                         </div>
                     </Col>
                     <Col span={24}>
-                        <User />
+                        <User param={params.status}/>
                     </Col>
                 </Row>
                 <div id='gsapBox' />

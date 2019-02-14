@@ -13,7 +13,7 @@ export default class RouteMap extends React.Component<any, any> {
         return (
             <Router>
                 <Switch>
-                    <Route exact={true} path='/user/login' component={UserLayout}/>
+                    <Route exact={true} path='/user/:status' component={UserLayout}/>
                     <GuardRoute/>
                 </Switch>
             </Router>

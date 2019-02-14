@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Form, Input, Button, Icon, Row, Col, Select, Popover, Progress} from 'antd';
+import { Link } from "react-router-dom";
 import * as _ from 'lodash';
 import { validTelePhone, vaildEmail } from 'src/service/validate';
 import { IForm, registerForm } from './user-register-config';
@@ -246,7 +247,7 @@ class UserRegister extends React.PureComponent<any, any> {
                                 <Button type='primary' style={{width: '100%'}} size='large' htmlType="submit">注册</Button>
                             </Col>
                             <Col span={12} className='user-register-reLogin'>
-                                <a href="javascript:;">使用已有账户登录</a>
+                                <Link to='/user/login'>使用已有账户登录</Link>
                             </Col>
                         </Row>
                     </FormItem>

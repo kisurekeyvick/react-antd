@@ -13,7 +13,7 @@ const userRouter: ILoadableRoute[] = [
     {
         path: '/user/:status',
         component:Loadable({
-            loader: () => import('src/containers/user/user'),
+            loader: () => import('src/layouts/user/user'),
             loading: () => null,
             modules: ['user']
         }),

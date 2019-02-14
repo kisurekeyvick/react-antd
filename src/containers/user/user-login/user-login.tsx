@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { Form, Input, Button, Checkbox, Icon, Tabs, Row, Col} from 'antd';
+import { Link } from "react-router-dom";
 import * as _ from 'lodash';
+import * as moment from 'moment';
 import { IForm, loginFormItem, loginPhoneFormItem } from './user-login-config';
 import { validTelePhone } from 'src/service/validate';
+import { api } from 'src/_mock/api'; 
+import { CookieService } from 'src/service/cookie';
 import './user-login.scss';
 
 const FormItem = Form.Item;
@@ -11,6 +15,7 @@ const TabPane = Tabs.TabPane;
 class UserLogin extends React.PureComponent<any, any> {
     public config: any;
     public interval: any;
+    private _cookie: CookieService;
 
     constructor(public props: any) {
         super(props);
@@ -21,8 +26,11 @@ class UserLogin extends React.PureComponent<any, any> {
 
         this.config = {
             loginFormItem: _.cloneDeep(loginFormItem),
-            loginPhoneFormItem: this.rebuildFormItem(_.cloneDeep(loginPhoneFormItem))
+            loginPhoneFormItem: this.rebuildFormItem(_.cloneDeep(loginPhoneFormItem)),
+            tabIndex: '1'
         };
+
+        this._cookie = new CookieService();
     }
 
     /**
@@ -51,9 +59,33 @@ class UserLogin extends React.PureComponent<any, any> {
      */
     public handleSubmit = (e: any) => {
         e.preventDefault();
-        this.props.form.validateFields((error: any, value: any) => {
-            if (error) {
 
+        this.props.form.validateFields((error: any, value: any) => {
+            let params: any = null;
+
+            if (this.config.tabIndex === '1' && !error.hasOwnProperty('userName') && !error.hasOwnProperty('password'))
+                params = { 
+                    userName: value['userName'],
+                    password: value['password'],
+                    remember: value['remember'],
+                };
+            else if (this.config.tabIndex === '2' && !error.hasOwnProperty('phone') && !error.hasOwnProperty('verificationCode'))
+                params = {
+                    phone: value['phone'],
+                    verificationCode: value['verificationCode'],
+                    remember: value['remember'],
+                };
+
+            if (params) {
+                api.userLogin(params).then((res: any) => {
+                    if (res && res.status === 200) {
+                        const endTime: any = params['remember'] ? moment().add(30, 'days').toDate() : '';
+
+                        for(const key in res.data.result) {
+                            this._cookie.setCookie(`_${key}`, res.data.result[key], endTime);
+                        }
+                    }
+                });
             }
         });
     }
@@ -64,7 +96,7 @@ class UserLogin extends React.PureComponent<any, any> {
      * @memberof UserLogin
      */
     public tabCallback = (e: string) => {
-
+        this.config.tabIndex = e;
     }
 
     /**
@@ -153,7 +185,7 @@ class UserLogin extends React.PureComponent<any, any> {
                                     <Icon type="alipay-circle" className='other-login-icon' theme="outlined" />
                                     <Icon type="taobao-circle" className='other-login-icon' theme="outlined" />
                                     <Icon type="weibo-circle" className='other-login-icon' theme="outlined" />
-                                    <a href="javascript:;">注册账户</a>
+                                    <Link to='/user/register'>注册账户</Link>
                                 </div>
                             </div>;
                 break;
