@@ -120,8 +120,6 @@ node_modules/react-scripts/config/webpack.config.dev.js
     },
 },
 ```
-## mock数据暂时不上传
-- 部分数据表面不够真实，有待修改
 ## 按需加载antd样式，全局颜色配置
 - config-overrides.js
 ```js
